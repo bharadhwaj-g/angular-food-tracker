@@ -10,7 +10,7 @@ import { Food } from './food.model';
       <label>Enter Food Name:</label>
       <input placeholder="name" #newName>
       <label>Enter Details:</label>
-      <input placeholder="details" #newDetails>
+      <textarea placeholder="details" #newDetails></textarea>
       <label>Enter Calories:</label>
       <input placeholder="calories" #newCalories>
       <button (click)="addFood(newName, newDetails, newCalories)">Add</button>
