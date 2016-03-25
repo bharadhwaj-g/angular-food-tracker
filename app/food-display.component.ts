@@ -7,15 +7,16 @@ import { Food } from './food.model';
   inputs: ['food'],
   directives: [EditFoodComponent],
   template: `
-  <div *ngIf="!editMode">
-    <h3>Name: {{ food.name }}</h3>
-    <p>Description: {{ food.details }}</p>
-    <p>Calories: {{ food.calories }}</p>
-    <button (click)="clickEdit()">Edit</button>
-  </div>
-  <div *ngIf="editMode">
-    <edit-food [food]="food"></edit-food>
-    <button (click)="clickReturn()">Done</button>
+  <div class="edit-details">
+    <div *ngIf="!editMode">
+      <p>Description: {{ food.details }}</p>
+      <p>Calories: {{ food.calories }}</p>
+      <button class="button-edit" (click)="clickEdit()">Edit</button>
+    </div>
+    <div *ngIf="editMode">
+      <edit-food [food]="food"></edit-food>
+      <button class="button-done" (click)="clickReturn()">Done</button>
+    </div>
   </div>
   `
 })
