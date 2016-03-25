@@ -9,9 +9,9 @@ import { Food } from './food.model';
   directives: [FoodDisplayComponent],
   template: `
     <div *ngFor="#food of foodList">
-      <h3 (click)="foodClicked(food)">{{ food.name }}</h3>
+      <h3 *ngIf="food !== selectedFood" (click)="foodClicked(food)">{{ food.name }}</h3>
+      <food-display *ngIf="food === selectedFood" [food]="selectedFood"></food-display>
     </div>
-    <food-display *ngIf="selectedFood" [food]="selectedFood"></food-display>
   `
 
 })
