@@ -7,9 +7,9 @@ import { Food } from './food.model';
   template: `
   <div>
     <h3>Edit Mode</h3>
-    <p><input [(ngModel)]="food.name"/></p>
-    <textarea [(ngModel)]="food.details"></textarea>
-    <p><input [(ngModel)]="food.calories"/></p>
+    <p>Name: <input [(ngModel)]="food.name"/></p>
+    <p>Description: <textarea [(ngModel)]="food.details"></textarea><p>
+    <p>Calories: <input [(ngModel)]="food.calories"/></p>
   </div>
   `
 })
