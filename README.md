@@ -6,7 +6,7 @@
 
 ## Description
 
-Log the food you have eaten by submitting a form with its name, calories, and details. View the foods you have logged and click them for more information. View foods by calorie amount. 
+Log the food you have eaten by submitting a form with its name, calories, and details. View the foods you have logged and click them for more information. Sort foods by calorie amount. 
 
 ## Setup/Installation Requirements
 
