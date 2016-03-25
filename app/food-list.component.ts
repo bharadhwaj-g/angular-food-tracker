@@ -17,7 +17,7 @@ import { Food } from './food.model';
       <option value="high">Over 300 Calories</option>
     </select>
     <div *ngFor="#food of foodList | calories:calorieFilter">
-      <h3 *ngIf="food !== selectedFood" (click)="foodClicked(food)">{{ food.name }}</h3>
+      <h3 (click)="foodClicked(food)">{{ food.name }}</h3>
       <food-display *ngIf="food === selectedFood" [food]="selectedFood"></food-display>
     </div>
     <new-food (onSubmitNewFood)="addFood($event)"></new-food>
@@ -34,7 +34,11 @@ export class FoodListComponent {
     this.onFoodSelect = new EventEmitter();
   }
   foodClicked(clickedFood: Food): void {
-    this.selectedFood= clickedFood;
+    if(clickedFood === this.selectedFood) {
+      this.selectedFood = null;
+    } else {
+      this.selectedFood = clickedFood;
+    }
     this.onFoodSelect.emit(clickedFood);
   }
   addFood(newFood: string): void {
