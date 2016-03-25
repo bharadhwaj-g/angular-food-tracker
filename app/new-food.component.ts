@@ -5,7 +5,8 @@ import { Food } from './food.model';
   selector: 'new-food',
   outputs: ['onSubmitNewFood'],
   template: `
-  <div>
+  <hr>
+  <div class="new-food">
     <h3>Add Food</h3>
       <label>Enter Food Name:</label>
       <input placeholder="name" #newName>
@@ -13,8 +14,9 @@ import { Food } from './food.model';
       <textarea placeholder="details" #newDetails></textarea>
       <label>Enter Calories:</label>
       <input placeholder="calories" #newCalories>
-      <button (click)="addFood(newName, newDetails, newCalories)">Add</button>
+      <button class="add-button" (click)="addFood(newName, newDetails, newCalories)">Add</button>
   </div>
+  <hr>
   `
 })
 

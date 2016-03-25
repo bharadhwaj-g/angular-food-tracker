@@ -8,6 +8,7 @@ import { Food } from './food.model';
   template: `
     <div class="container">
       <h1>Food Tracker</h1>
+      <h4>Monitor your daily food intake</h4>
       <food-list [foodList]="foods"></food-list>
     </div>
   `

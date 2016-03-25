@@ -9,8 +9,10 @@ import { Food } from './food.model';
   template: `
   <div class="edit-details">
     <div *ngIf="!editMode">
-      <p>Description: {{ food.details }}</p>
-      <p>Calories: {{ food.calories }}</p>
+      <label>Description:</label>
+      <p>{{ food.details }}</p>
+      <label>Calories:</label>
+      <p>{{ food.calories }}</p>
       <button class="button-edit" (click)="clickEdit()">Edit</button>
     </div>
     <div *ngIf="editMode">
