@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from 'angular2/core';
+import { Component } from 'angular2/core';
 import { EditFoodComponent } from './edit-food.component';
 import { Food } from './food.model';
 
