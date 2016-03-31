@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from 'angular2/core';
+import { Component } from 'angular2/core';
 import { FoodDisplayComponent } from './food-display.component';
 import { NewFoodComponent } from './new-food.component';
 import { CaloriesPipe } from './calories.pipe';
@@ -7,7 +7,6 @@ import { Food } from './food.model';
 @Component({
   selector: 'food-list',
   inputs: ['foodList'],
-  outputs: ['onFoodSelect'],
   pipes: [CaloriesPipe],
   directives: [FoodDisplayComponent, NewFoodComponent],
   template: `
@@ -28,19 +27,14 @@ import { Food } from './food.model';
 
 export class FoodListComponent {
   public foodList: Food[];
-  public onFoodSelect: EventEmitter<Food>;
   public selectedFood: Food;
   public calorieFilter: string = "all";
-  constructor() {
-    this.onFoodSelect = new EventEmitter();
-  }
   foodClicked(clickedFood: Food): void {
     if(clickedFood === this.selectedFood) {
       this.selectedFood = null;
     } else {
       this.selectedFood = clickedFood;
     }
-    this.onFoodSelect.emit(clickedFood);
   }
   addFood(newFood: string): void {
     var foodCalories: number = parseInt(newFood[2]);
